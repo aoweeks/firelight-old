@@ -1,3 +1,13 @@
-body{
-    background-color: #333333;
+.bridge{
+
+    padding: 10px;
+
+    #bridge-icon{
+        height: 50px;
+        width: 50px;
+
+        :hover{
+            cursor: pointer;
+        }
+    }
 }

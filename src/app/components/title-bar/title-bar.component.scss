@@ -1,0 +1,25 @@
+:host{
+    background-color: #111111;
+    color: #dddddd;
+
+    -webkit-app-region: drag;
+
+    display: grid;
+    grid-template-columns: 85% auto;
+    height: 30px;
+
+    li:hover{
+        color: #ececec;
+    }
+}
+
+img{
+    padding-top:2px;
+    height: 26px;
+    width: 26px;
+}
+
+.title{
+    font-family: 'Lato';
+    font-size: 16px;
+}
