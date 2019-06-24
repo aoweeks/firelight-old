@@ -12,7 +12,7 @@ import { BridgeService } from './providers/bridge.service';
 })
 export class AppComponent {
   constructor(public electronService: ElectronService,
-    public bridgeService: BridgeService,
+    public bridge: BridgeService,
     private translate: TranslateService) {
 
     translate.setDefaultLang('en');
