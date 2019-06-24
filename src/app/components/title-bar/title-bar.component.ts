@@ -12,4 +12,8 @@ export class TitleBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  closeAllWindows(){
+    console.log('Close all windows');
+  }
+
 }

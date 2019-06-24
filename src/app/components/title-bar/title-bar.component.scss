@@ -2,24 +2,51 @@
     background-color: #111111;
     color: #dddddd;
 
-    -webkit-app-region: drag;
-
     display: grid;
     grid-template-columns: 85% auto;
-    height: 30px;
 
-    li:hover{
-        color: #ececec;
+    -webkit-app-region: drag;
+
+    div{
+        
+        height: 34px;
+        justify-self: left;
+
+        display: flex;
+        align-items: center;
+
+        
+        
+        img{
+            height: 26px;
+            width: 26px;
+            float: left;
+        }
+        
+        .title{
+            font-family: 'Lato';
+            font-size: 16px;
+            float: left;
+        }
     }
-}
 
-img{
-    padding-top:2px;
-    height: 26px;
-    width: 26px;
-}
+    nav{
+        justify-self: right;
+        height: 34px;
+        display: flex;
+        align-items: center;
 
-.title{
-    font-family: 'Lato';
-    font-size: 16px;
+        .title-button{
+            float: left;
+            display: flex;
+            align-self: center;
+            
+        
+            :hover{
+                cursor: pointer;
+                fill: #ececec;
+            }
+        }
+
+    }
 }

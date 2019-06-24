@@ -1,13 +1,18 @@
-.bridge{
+.container{
+    display: grid;
+    grid-template-rows: 34px auto auto;
 
-    padding: 10px;
+    .bridge{
 
-    #bridge-icon{
-        height: 50px;
-        width: 50px;
+        padding: 10px;
 
-        :hover{
-            cursor: pointer;
+        #bridge-icon{
+            height: 50px;
+            width: 50px;
+
+            :hover{
+                cursor: pointer;
+            }
         }
     }
 }

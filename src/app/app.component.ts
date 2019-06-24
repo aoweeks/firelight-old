@@ -3,6 +3,8 @@ import { ElectronService } from './providers/electron.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from '../environments/environment';
 
+import { BridgeService } from './providers/bridge.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,6 +12,7 @@ import { AppConfig } from '../environments/environment';
 })
 export class AppComponent {
   constructor(public electronService: ElectronService,
+    public bridgeService: BridgeService,
     private translate: TranslateService) {
 
     translate.setDefaultLang('en');
