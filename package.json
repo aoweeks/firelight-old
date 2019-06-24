@@ -84,6 +84,7 @@
     "node": ">=10.9.0"
   },
   "dependencies": {
+    "node-dtls-client": "^0.5.6",
     "node-hue-api": "^2.4.6"
   }
 }
