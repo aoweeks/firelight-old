@@ -5,7 +5,7 @@ import { Injectable, APP_ID} from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class BridgeService{
+export class BridgeService {
 
   private host: String = '192.168.1.1';
   private username: String = 'jmH6jb0WkG4rGdISVpDZvRyx2bDR2m7xtcVFWCVe';
@@ -14,21 +14,24 @@ export class BridgeService{
 
   public isOnline: Boolean = false;
   public entertainmentAreas: Object[];
+  public lightsinAreas: any;
+  public currentArea: any;
+  public currentAreaScenes: Object[] = [{name: 'One'}, {name: 'Two'}];
+  public currentScene: Object;
 
   constructor() {
 
-    this.checkBridgeStatus();
-    setInterval(() => this.checkBridgeStatus(), 3000);
+    setInterval(() => this.updateBridgeStatus(), 3000);
   }
 
   // Check if current selected bridge is online by checking version
-  checkBridgeStatus() {
+  private updateBridgeStatus(): void {
     this.hue.getVersion()
             .then( (result) => {
               this.isOnline = true;
 
               if (!this.entertainmentAreas) {
-                this.getEntertainmentAreas();
+                this.findEntertainmentAreas();
               }
             })
             .catch( (error) => {
@@ -37,14 +40,40 @@ export class BridgeService{
             .done();
   }
 
-  getEntertainmentAreas() {
+  // Populate list of entertainment areas on selected bridge
+  private findEntertainmentAreas() {
     this.hue.groups()
             .then( (result) => {
               this.entertainmentAreas = result.filter( (group) => {
                 if (group.type === 'Entertainment') { return group; }
               });
-              console.log(this.entertainmentAreas);
+
+              const lightsInAreas = {};
+              this.entertainmentAreas.forEach( async (area) => {
+                lightsInAreas[area['id']] = await this.findLightsInAreaFromBridge(area);
+              });
+              console.log(lightsInAreas);
+              this.lightsinAreas = lightsInAreas;
             })
             .done();
+  }
+
+  // Populate list of all lights on bridge
+  private async findLightsInAreaFromBridge(area) {
+    const lightIDList = await this.hue.getGroup(area.id);
+
+    const lights = {};
+    await Promise.all(lightIDList.lights.map( async (lightID) => {
+        lights[lightID] = await this.hue.lightStatus(lightID);
+    }));
+
+    return lights;
+  }
+
+  public getLightsInArea(area: Number) {
+
+    // const lightinArea = this.allLightsInfo.filter({
+
+    // });
   }
 }
