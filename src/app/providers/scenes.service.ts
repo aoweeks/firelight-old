@@ -5,5 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class ScenesService {
 
+
   constructor() { }
+
+  public getScene() {
+  }
+
+  public setScene(){
+    
+  }
 }
