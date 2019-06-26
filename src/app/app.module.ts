@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { BridgeWindowComponent } from './components/bridge-window/bridge-window.component';
+import { SceneComponent } from './components/scene/scene.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -32,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     WebviewDirective,
     TitleBarComponent,
-    BridgeWindowComponent
+    BridgeWindowComponent,
+    SceneComponent
   ],
   imports: [
     BrowserModule,

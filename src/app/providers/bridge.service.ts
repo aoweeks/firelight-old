@@ -13,8 +13,7 @@ export class BridgeService {
   private hue: any = new HueAPI(this.host, this.username);
 
   public isOnline: Boolean = false;
-  public entertainmentAreas: Object[];
-  public lightsinAreas: any;
+  public entertainmentAreas: any;
   public currentArea: any;
   public currentAreaScenes: Object[] = [{name: 'One'}, {name: 'Two'}];
   public currentScene: Object;
@@ -44,22 +43,22 @@ export class BridgeService {
   private findEntertainmentAreas() {
     this.hue.groups()
             .then( (result) => {
-              this.entertainmentAreas = result.filter( (group) => {
+              const entertainmentAreas = result.filter( (group) => {
                 if (group.type === 'Entertainment') { return group; }
               });
 
-              const lightsInAreas = {};
-              this.entertainmentAreas.forEach( async (area) => {
-                lightsInAreas[area['id']] = await this.findLightsInAreaFromBridge(area);
+              entertainmentAreas.forEach( async (area) => {
+                area.lights = await this.findLightsInArea(area);
               });
-              console.log(lightsInAreas);
-              this.lightsinAreas = lightsInAreas;
+
+              console.log(entertainmentAreas);
+              this.entertainmentAreas = entertainmentAreas;
             })
             .done();
   }
 
-  // Populate list of all lights on bridge
-  private async findLightsInAreaFromBridge(area) {
+  // Return info for each light in a given entertainment area, from bridge
+  private async findLightsInArea(area) {
     const lightIDList = await this.hue.getGroup(area.id);
 
     const lights = {};
@@ -70,8 +69,8 @@ export class BridgeService {
     return lights;
   }
 
-  public getLightsInArea(area: Number) {
-
+  public getAreaInfo(area: Number) {
+    // return this.
     // const lightinArea = this.allLightsInfo.filter({
 
     // });
