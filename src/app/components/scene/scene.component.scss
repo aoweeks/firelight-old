@@ -1,0 +1,17 @@
+.light-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .light-box{
+
+        height: 120px;
+        color: #aaaaaa;
+        font-family: 'Lato';
+        font-size: 10px;
+        font-weight: 800;
+
+        display: grid;
+        justify-items: center;
+        align-items: flex-end;
+    }
+}

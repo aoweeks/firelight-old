@@ -13,7 +13,7 @@ export class BridgeService {
   private hue: any = new HueAPI(this.host, this.username);
 
   public isOnline: Boolean = false;
-  public entertainmentAreas: any;
+  private entertainmentAreas: any;
   public currentArea: any;
   public currentAreaScenes: Object[] = [{name: 'One'}, {name: 'Two'}];
   public currentScene: Object;
@@ -69,10 +69,10 @@ export class BridgeService {
     return lights;
   }
 
-  public getAreaInfo(area: Number) {
-    // return this.
-    // const lightinArea = this.allLightsInfo.filter({
 
-    // });
+  public getAreaInfo(desiredAreaID) {
+    return this.entertainmentAreas.find((area) =>
+      area.id === desiredAreaID.toString()
+    );
   }
 }

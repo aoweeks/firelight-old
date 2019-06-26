@@ -1,3 +1,8 @@
-<p>
-  scene works!
-</p>
+<!-- <div *ngFor="let light of this.areaInfo.lights | keyvalue "> -->
+<div class="light-wrapper">
+  <div *ngFor="let light of this.areaInfo.lights | keyvalue"
+    class="light-box">
+    {{ light.value.name | uppercase }}
+  </div>
+</div>
+<!-- </div> -->
