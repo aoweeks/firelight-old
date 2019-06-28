@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BridgeService } from '../../providers/bridge.service';
+import { ScenesService } from '../../providers/scenes.service';
 
 @Component({
   selector: 'scene',
@@ -8,14 +9,17 @@ import { BridgeService } from '../../providers/bridge.service';
 })
 export class SceneComponent implements OnInit {
   private areaInfo;
+  //private scene: Scene;
 
-  constructor(public bridge: BridgeService) {
-    // lightsList = this.bridge.entertainmentAreas(7);
-    this.areaInfo = 0;
+  constructor(public bridge: BridgeService,
+              public scenesService: ScenesService) {
   }
 
   ngOnInit() {
-   setTimeout(() => this.areaInfo = this.bridge.getAreaInfo(11), 5000);
+    setTimeout(() => {
+      this.areaInfo = this.bridge.getAreaInfo(11);
+
+    }, 5000);
   }
 
 }
