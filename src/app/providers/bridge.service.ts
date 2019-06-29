@@ -7,7 +7,7 @@ import { Injectable, APP_ID} from '@angular/core';
 })
 export class BridgeService {
 
-  private host: String = '192.168.1.1';
+  public host = '192.168.1.1';
   private username: String = 'jmH6jb0WkG4rGdISVpDZvRyx2bDR2m7xtcVFWCVe';
   private clientKey: Buffer = new Buffer('810C8593D619AD8AECE88E63FFAFE52F', 'hex');
   private hue: any = new HueAPI(this.host, this.username);
@@ -15,11 +15,12 @@ export class BridgeService {
   public isOnline: Boolean = false;
   private entertainmentAreas: any;
   public currentArea: any;
-  public currentAreaScenes: Object[] = [{name: 'One'}, {name: 'Two'}];
+  //public currentAreaScenes: Object[] = [{name: 'One'}, {name: 'Two'}];
   public currentScene: Object;
 
   constructor() {
 
+    this.currentArea = 8;
     setInterval(() => this.updateBridgeStatus(), 3000);
   }
 

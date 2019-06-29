@@ -8,7 +8,7 @@ import { SceneList } from '../models/scenelist.model';
 })
 export class ScenesService {
 
-  private sceneList = new SceneList();
+  public sceneList = new SceneList();
   private sceneOne;
   // private sceneList = {
   //   bridgeAndArea: String,

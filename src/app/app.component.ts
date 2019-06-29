@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from '../environments/environment';
 
 import { BridgeService } from './providers/bridge.service';
+import { ScenesService } from './providers/scenes.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { BridgeService } from './providers/bridge.service';
 export class AppComponent {
   constructor(public electronService: ElectronService,
     public bridge: BridgeService,
+    public scenes: ScenesService,
     private translate: TranslateService) {
 
     translate.setDefaultLang('en');
@@ -25,6 +27,10 @@ export class AppComponent {
     } else {
       console.log('Mode web');
     }
+
+    console.log(
+      Object.keys(this.scenes.sceneList[this.bridge.host][this.bridge.currentArea])
+    );
   }
 
   openBridgeWindow(){
