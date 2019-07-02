@@ -13,6 +13,8 @@ export class SceneComponent implements OnInit {
 
   constructor(public bridge: BridgeService,
               public scenesService: ScenesService) {
+
+    this.areaInfo = {};
   }
 
   ngOnInit() {
