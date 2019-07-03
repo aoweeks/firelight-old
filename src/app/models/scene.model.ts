@@ -2,11 +2,13 @@ import { Light } from './light.model';
 
 export class Scene {
 
-    name: String;
-    lights: Light[];
 
-    constructor(name: String = '', lights: Light[] = []) {
-        this.name = name;
-        this.lights = lights;
+    constructor(lightIDs: number[]) {
+        // this.lights = lights;
+
+        lightIDs.forEach( (lightID) => {
+            this[lightID] = new Light(lightID);
+        });
+
     }
 }

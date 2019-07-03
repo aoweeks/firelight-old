@@ -8,44 +8,35 @@ import { SceneList } from '../models/scenelist.model';
 })
 export class ScenesService {
 
-  public sceneList = new SceneList();
-  private sceneOne;
-  // private sceneList = {
-  //   bridgeAndArea: String,
-  // }
+  public sceneList: any = new SceneList();
+ 
 
   constructor() {
-    this.sceneOne = new Scene('The First Scene', [new Light(1)]);
-    console.log(this.sceneOne);
-    console.log(this.sceneList);
-
-    this.addScene('192.168.1.1', 8, [1, 5, 8 , 9]);
+    console.log('running');
+    this.addScene('192.168.1.1', 8, [1, 5, 8 , 9], 'Tester');
   }
 
-  public getScene() {
+  public getScene(bridgeIP: string,
+                  areaID: number,
+                  sceneID: string): any {
 
-    console.log(this.sceneOne);
+    return this.sceneList[bridgeIP][areaID]['Tester'];
   }
 
   public addScene(bridgeIP: string,
                   areaID: number,
-                  lightIDs: number[]) {
+                  lightIDs: number[],
+                  sceneName: string) {
 
-    const lights: Light[] = [];
-
-    lightIDs.forEach( (lightID) => {
-      lights.push( new Light(lightID) );
-    });
-
-    lights[0].type = 'fire';
+    console.log('got to here');
+    const newScene = new Scene( [1, 5, 9, 8]);
 
     this.sceneList[bridgeIP] = {};
     this.sceneList[bridgeIP][areaID] = {};
-    this.sceneList[bridgeIP][areaID]['Tester'] = lights;
-    
-    console.log(this.sceneList);
+    this.sceneList[bridgeIP][areaID][sceneName] = newScene;
 
-    //console.log(this.sceneList);
+    console.log(this.sceneList);
+    console.log(this.sceneList[bridgeIP]);
   }
 
   public updateScene() {
