@@ -2,7 +2,7 @@
   <div *ngFor="let light of this.areaInfo.lights | keyvalue"
     class="light-box">
 
-    <h2>{{ this.scene[light.key].type}}</h2>
+    <light-type [lightType]='this.scene[light.key].type'></light-type>
     <!-- <h2>{{ [this.bridge.host][this.bridge.currentArea][light.key]}}</h2> -->
     {{ light.value.name | uppercase }}
   </div>
