@@ -19,6 +19,7 @@ export class SceneComponent implements OnInit {
               public scenesService: ScenesService) {
 
     this.areaInfo = {};
+    this.scene = {};
     this.sceneID = 'Tester';
   }
 
@@ -27,6 +28,7 @@ export class SceneComponent implements OnInit {
       this.areaInfo = await this.bridge.getAreaInfo(11);
       this.scene = await this.scenesService.getScene(this.bridge.host, this.bridge.currentArea, 'Tester');
       console.log(this.scene);
+      console.log(this.areaInfo);
     }, 5000);
   }
 

@@ -28,15 +28,13 @@ export class ScenesService {
                   lightIDs: number[],
                   sceneName: string) {
 
-    console.log('got to here');
-    const newScene = new Scene( [1, 5, 9, 8]);
+    const newScene = new Scene( [1, 2, 3, 4, 5, 13, 14, 16]);
 
     this.sceneList[bridgeIP] = {};
     this.sceneList[bridgeIP][areaID] = {};
     this.sceneList[bridgeIP][areaID][sceneName] = newScene;
 
     console.log(this.sceneList);
-    console.log(this.sceneList[bridgeIP]);
   }
 
   public updateScene() {
