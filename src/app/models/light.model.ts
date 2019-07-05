@@ -5,11 +5,13 @@ export class Light  {
     public baseColour = {};
     public brightness = {};
     public coalOptions = {};
+    public on: Boolean;
 
     constructor(id) {
         this.id = id;
-
         this.type = 'bulb';
+        this.on = false;
+
         this.baseColour = {
             x: 255,
             y: 200

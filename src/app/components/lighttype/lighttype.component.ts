@@ -8,12 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LighttypeComponent implements OnInit {
 
   @Input()
-  lightType: String;
-
-  constructor() { }
+  light;
 
   ngOnInit() {
-    console.log(this.lightType);
   }
 
 }

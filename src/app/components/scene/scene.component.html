@@ -2,11 +2,8 @@
   <div *ngFor="let light of this.areaInfo.lights | keyvalue"
     class="light-box">
 
-    <light-type [lightType]='this.scene[light.key].type'></light-type>
-    <!-- <h2>{{ [this.bridge.host][this.bridge.currentArea][light.key]}}</h2> -->
+    <light-type [light]='this.scene[light.key]'></light-type>
     {{ light.value.name | uppercase }}
-  </div>
-  <div class="light-box">
-    AUDIO
+    <input #lightSwitch type="checkbox" [(ngModel)]="this.scene[light.key].on">
   </div>
 </div>
