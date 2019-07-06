@@ -13,7 +13,7 @@ export class ScenesService {
 
   constructor() {
     console.log('running');
-    this.addScene('192.168.1.1', 8, [1, 5, 8 , 9], 'Tester');
+    this.addScene('192.168.1.1', 8, [1, 2, 3, 4, 5, 13, 14, 16], 'Tester');
   }
 
   public getScene(bridgeIP: string,
@@ -28,7 +28,8 @@ export class ScenesService {
                   lightIDs: number[],
                   sceneName: string) {
 
-    const newScene = new Scene( [1, 2, 3, 4, 5, 13, 14, 16]);
+    const newScene = new Scene( lightIDs );
+    newScene[3].type = 'candle'; //temp
 
     this.sceneList[bridgeIP] = {};
     this.sceneList[bridgeIP][areaID] = {};

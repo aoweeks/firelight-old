@@ -4,13 +4,13 @@ export class Light  {
     public type: String;
     public baseColour = {};
     public brightness = {};
-    public coalOptions = {};
+    public emberOptions = {};
     public on: Boolean;
 
     constructor(id) {
         this.id = id;
         this.type = 'bulb';
-        this.on = false;
+        this.on = true;
 
         this.baseColour = {
             x: 255,
