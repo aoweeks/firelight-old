@@ -30,6 +30,7 @@ export class ScenesService {
 
     const newScene = new Scene( lightIDs );
     newScene[3].type = 'candle'; //temp
+    newScene[13].type = 'fire'; //temp
 
     this.sceneList[bridgeIP] = {};
     this.sceneList[bridgeIP][areaID] = {};
