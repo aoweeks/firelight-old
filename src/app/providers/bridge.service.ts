@@ -15,8 +15,7 @@ export class BridgeService {
   public isOnline: Boolean = false;
   private entertainmentAreas: any;
   public currentArea: any;
-  //public currentAreaScenes: Object[] = [{name: 'One'}, {name: 'Two'}];
-  public currentScene: Object;
+  public currentScene: any;
 
   constructor() {
 

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BridgeService } from '../../providers/bridge.service';
 import { ScenesService } from '../../providers/scenes.service';
 
 import { Scene } from '../../models/scene.model';
+
 
 @Component({
   selector: 'scene',
@@ -10,6 +11,10 @@ import { Scene } from '../../models/scene.model';
   styleUrls: ['./scene.component.scss']
 })
 export class SceneComponent implements OnInit {
+
+  @Input()
+  bridgeIP;
+
   private areaInfo;
 
   private sceneID: String;

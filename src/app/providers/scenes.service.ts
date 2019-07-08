@@ -14,6 +14,21 @@ export class ScenesService {
   constructor() {
     console.log('running');
     this.addScene('192.168.1.1', 8, [1, 2, 3, 4, 5, 13, 14, 16], 'Tester');
+    this.addScene('192.168.1.1', 8, [1, 2, 3, 4, 5, 13, 14, 16], 'Nexter');
+  }
+
+  public getScenesForArea(bridgeIP: string,
+                          areaID: number) {
+
+    // if(this.sceneList[bridgeIP][areaID]) {
+    //   return this.sceneList[bridgeIP][areaID];
+    // } else {
+    //   console.log("HELLLLOOO");
+    //   return {"hi": "hello"};
+    // }
+
+    return Object.keys(this.sceneList[bridgeIP][areaID]);
+
   }
 
   public getScene(bridgeIP: string,
@@ -32,8 +47,10 @@ export class ScenesService {
     newScene[3].type = 'candle'; //temp
     newScene[13].type = 'fire'; //temp
 
-    this.sceneList[bridgeIP] = {};
-    this.sceneList[bridgeIP][areaID] = {};
+    // Initialise to prevent undefined errors, may not be the best way
+    // to do this, look at refactoring later
+    if (!this.sceneList[bridgeIP]) { this.sceneList[bridgeIP] = {}; }
+    if (!this.sceneList[bridgeIP][areaID]) { this.sceneList[bridgeIP][areaID] = {}; }
     this.sceneList[bridgeIP][areaID][sceneName] = newScene;
 
     console.log(this.sceneList);
