@@ -1,0 +1,55 @@
+$switch-neutral: #c5c5c5;
+$switch-light: #eeeeee;
+$switch-dark: #999999;
+
+
+svg{
+    height: 50px;
+    width: auto;
+    
+    .switch-on{
+        #On-Face{
+            fill: $switch-neutral;
+        }
+
+        #Off-Face, #Off-Symbol-Inner{
+            fill: $switch-dark;
+        }
+
+        #Off-Edge{
+            fill: $switch-light;
+            height: 10px;
+        }
+
+        #Off-Symbol-Outer{
+            ry: 17.5px;
+            cy: 65px;
+        }
+
+        #Off-Symbol-Inner{
+            ry: 11.75px;
+            cy: 65px;
+        }
+    }
+
+    .switch-off{
+        #Off-Face, #Off-Symbol-Inner{
+            fill: $switch-neutral;
+        }
+
+        #On-Face{
+            fill: $switch-light;
+        }
+
+        #On-Edge{
+            fill: $switch-dark;
+            height: 10px;
+            y: 170px;
+        }
+
+        #On-Symbol{
+            height: 35px;
+            y: 117.5px;
+        }
+    }
+}

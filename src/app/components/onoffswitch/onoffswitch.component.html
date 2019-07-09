@@ -1,3 +1,12 @@
-<p>
-  onoffswitch works!
-</p>
+<svg (click)="clicked()" width="100%" height="100%" viewBox="0 0 120 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <g [ngClass]="{ 'switch-on' : this.on, 'switch-off' : !this.on }">
+    <rect id="On-Face" serif:id="On Face" x="19" y="100" width="82" height="82"/>
+    <rect id="On-Symbol" serif:id="On Symbol" x="57" y="120" width="6" height="40" style="fill:#212121;"/>
+    <rect id="Off-Face" serif:id="Off Face" x="19" y="18" width="82" height="82" />
+    <ellipse id="Off-Symbol-Outer" cx="60" cy="60" rx="20" ry="20" style="fill:#212121;" />
+    <ellipse id="Off-Symbol-Inner" cx="60" cy="60" rx="14" ry="14" />      
+    <rect id="On-Edge" serif:id="On Edge" x="19" y="180" width="82" height="0"/>
+    <rect id="Off-Edge" serif:id="Off Edge" x="19" y="18" width="82" height="0"/>
+    <path id="Border" d="M116,4L116,196L4,196L4,4L116,4ZM100,20L20,20L20,180L100,180L100,20Z" style="fill:#c5c5c5;"/>
+  </g>
+</svg>

@@ -1,7 +1,7 @@
 <div class="container">
     <title-bar></title-bar>
-    <scene>
-         <!-- [bridgeIP]="this.bridge.host"
+    <scene [bridgeIP]="this.bridge.host">
+        <!--
             [areaID]="this.bridge.currentArea"
             [sceneName]="this.bridge.currentScene"> -->
     </scene>
@@ -33,5 +33,6 @@
                 </option>
             </select>
         </div>
+        <on-off-switch></on-off-switch>
     </div>
 </div>
