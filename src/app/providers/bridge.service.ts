@@ -19,8 +19,10 @@ export class BridgeService {
 
   constructor() {
 
+    this.entertainmentAreas = [];
+    setInterval( () => this.updateBridgeStatus(), 3000);
     this.currentArea = 8;
-    setInterval(() => this.updateBridgeStatus(), 3000);
+    this.currentScene = 'Tester';
   }
 
   // Check if current selected bridge is online by checking version
@@ -29,7 +31,9 @@ export class BridgeService {
             .then( (result) => {
               this.isOnline = true;
 
-              if (!this.entertainmentAreas) {
+              console.log('got here');
+              if (!this.entertainmentAreas.length) {
+                console.log('and here');
                 this.findEntertainmentAreas();
               }
             })

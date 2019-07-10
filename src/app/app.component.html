@@ -1,9 +1,8 @@
 <div class="container">
     <title-bar></title-bar>
-    <scene [bridgeIP]="this.bridge.host">
-        <!--
+    <scene [bridgeIP]="this.bridge.host"
             [areaID]="this.bridge.currentArea"
-            [sceneName]="this.bridge.currentScene"> -->
+            [sceneName]="this.bridge.currentScene">
     </scene>
     <!-- <router-outlet></router-outlet> -->
     <div class="options-row">
@@ -21,18 +20,23 @@
             </svg>
         </div>
         <div class="areas">
-            <select [(ngModel)]="this.bridge.currentArea">
-                <option *ngFor="let area of this.bridge.entertainmentAreas">
-                    {{ area.name }}
+            <select [(ngModel)]="this.bridge.currentArea"
+                    (change)="this.scenes.updateCurrentScene()">
+                <option *ngFor="let area of this.bridge.entertainmentAreas"
+                        [value]="area.id">
+                    {{ area.name + " " + area.id }}
                 </option>
             </select>
 
-            <select [(ngModel)]="this.bridge.currentScene">
-                <option *ngFor="let scene of this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea)">
+            <select [(ngModel)]="this.bridge.currentScene"
+                    (change)="this.scenes.updateCurrentScene()">
+                <option *ngFor="let scene of this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea)"
+                        [value]="scene">
                     {{ scene }}
                 </option>
             </select>
         </div>
         <on-off-switch></on-off-switch>
+        {{ this.bridge.currentArea + " " + this.bridge.currentScene + " " + this.bridge.entertainmentAreas}}
     </div>
 </div>

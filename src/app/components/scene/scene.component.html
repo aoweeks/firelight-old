@@ -1,9 +1,9 @@
 <div class="light-wrapper">
-  <div *ngFor="let light of this.areaInfo.lights | keyvalue"
+  <div *ngFor="let light of this.bridge.getAreaInfo(this.areaID)?.lights | keyvalue"
     class="light-box">
 
-    <light-type [light]='this.scene[light.key]'></light-type>
+    <light-type [light]='this.scenesService.currentScene[light?.key]'></light-type>
     {{ light.value.name | uppercase }}
-    <input #lightSwitch type="checkbox" [(ngModel)]="this.scene[light.key].on">
+    <input #lightSwitch type="checkbox" [(ngModel)]="this.scenesService.currentScene[light?.key].on">
   </div>
 </div>

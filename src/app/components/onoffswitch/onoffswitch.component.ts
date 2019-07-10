@@ -15,6 +15,5 @@ export class OnoffswitchComponent implements OnInit {
 
   clicked() {
     this.on = !this.on;
-    console.log(this.on);
   }
 }

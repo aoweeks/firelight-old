@@ -15,9 +15,13 @@ export class SceneComponent implements OnInit {
   @Input()
   bridgeIP;
 
-  private areaInfo;
+  @Input()
+  areaID;
 
-  private sceneID: String;
+  @Input()
+  sceneName;
+
+  private areaInfo;
   private scene: Scene;
 
   constructor(public bridge: BridgeService,
@@ -25,16 +29,24 @@ export class SceneComponent implements OnInit {
 
     this.areaInfo = {};
     this.scene = {};
-    this.sceneID = 'Tester';
   }
 
   ngOnInit() {
-    setTimeout(async () => {
-      this.areaInfo = await this.bridge.getAreaInfo(11);
-      this.scene = await this.scenesService.getScene(this.bridge.host, this.bridge.currentArea, 'Tester');
-      console.log(this.scene);
-      console.log(this.areaInfo);
-    }, 5000);
+    // setTimeout( () => {
+    //   this.areaInfo = this.bridge.getAreaInfo(this.areaID);
+    //   this.scene = this.scenesService.getScene(this.bridge.host, this.bridge.currentArea, this.sceneName);
+    //   console.log(this.scene);
+    //   console.log(this.areaInfo);
+    // }, 3000);
   }
+
+  // updateScene() {
+  //   this.areaInfo = this.bridge.getAreaInfo(this.areaID);
+  //   this.scene = this.scenesService.getScene(this.bridge.host, this.bridge.currentArea, this.sceneName);
+  // }
+
+  // getLight(lightID: number) {
+  //     return this.scenesService.currentScene[lightID];
+  // }
 
 }
