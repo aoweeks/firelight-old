@@ -20,10 +20,9 @@ export class ScenesService {
   public getScenesForArea(bridgeIP: string,
                           areaID: number) {
 
-    
     this.initalizeScene(bridgeIP, areaID);
     const listOfScenes = Object.keys(this.sceneList[bridgeIP][areaID]);
-    
+
     if (!listOfScenes.length) {
       this.addScene(bridgeIP, areaID, [1, 2, 3, 4, 5, 13], 'New Scene');
     }
@@ -34,7 +33,9 @@ export class ScenesService {
 
   public updateCurrentScene(bridgeIP: string,
     areaID: number,
-    sceneName: string): any {
+    sceneName: string): void {
+
+    
 
     this.currentScene = this.sceneList[bridgeIP][areaID][sceneName];
   }

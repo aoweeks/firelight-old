@@ -48,5 +48,4 @@ export class SceneComponent implements OnInit {
   // getLight(lightID: number) {
   //     return this.scenesService.currentScene[lightID];
   // }
-
 }

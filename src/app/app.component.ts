@@ -33,7 +33,15 @@ export class AppComponent {
     );
   }
 
-  openBridgeWindow(){
+  openBridgeWindow() {
     console.log('Clicked!');
+  }
+
+
+  changeArea() {
+    this.scenes.updateCurrentScene(this.bridge.host, this.bridge.currentArea, this.bridge.currentSceneName);
+    const sceneList = this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea);
+    console.log(sceneList);
+    // this.bridge.currentSceneName = sceneList[0];
   }
 }

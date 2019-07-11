@@ -15,14 +15,14 @@ export class BridgeService {
   public isOnline: Boolean = false;
   private entertainmentAreas: any;
   public currentArea: any;
-  public currentScene: any;
+  public currentSceneName: any;
 
   constructor() {
 
     this.entertainmentAreas = [];
     setInterval( () => this.updateBridgeStatus(), 3000);
     this.currentArea = 8;
-    this.currentScene = 'Tester';
+    this.currentSceneName = 'Tester';
   }
 
   // Check if current selected bridge is online by checking version

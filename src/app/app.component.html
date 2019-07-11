@@ -1,6 +1,6 @@
 <div class="container">
     <title-bar></title-bar>
-    <scene [bridgeIP]="this.bridge.host"
+    <scene  [bridgeIP]="this.bridge.host"
             [areaID]="this.bridge.currentArea"
             [sceneName]="this.bridge.currentScene">
     </scene>
@@ -21,7 +21,7 @@
         </div>
         <div class="areas">
             <select [(ngModel)]="this.bridge.currentArea"
-                    (change)="this.scenes.updateCurrentScene()">
+                    (change)="this.changeArea()">
                 <option *ngFor="let area of this.bridge.entertainmentAreas"
                         [value]="area.id">
                     {{ area.name + " " + area.id }}
@@ -36,6 +36,30 @@
                 </option>
             </select>
         </div>
+        <svg width="40px" height="40px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+            <path d="M90,17.071L90,85C90,86.326 89.473,87.598 88.536,88.536C87.598,89.473 86.326,90 85,90L15,90C13.674,90 12.402,89.473 11.464,88.536C10.527,87.598 10,86.326 10,85L10,15C10,13.674 10.527,12.402 11.464,11.464C12.402,10.527 13.674,10 15,10L82.929,10L90,17.071Z" style="fill:#f7840e;"/>
+            <path d="M80,43C80,41.343 78.657,40 77,40C66.758,40 33.242,40 23,40C21.343,40 20,41.343 20,43C20,51.182 20,73.818 20,82C20,83.657 21.343,85 23,85C33.242,85 66.758,85 77,85C78.657,85 80,83.657 80,82C80,73.818 80,51.182 80,43Z" style="fill:#fff;"/>
+            <path class="metal" d="M70,10L70,32.5C70,33.163 69.737,33.799 69.268,34.268C68.799,34.737 68.163,35 67.5,35C60.318,35 39.682,35 32.5,35C31.837,35 31.201,34.737 30.732,34.268C30.263,33.799 30,33.163 30,32.5L30,10L70,10ZM65,15C65,14.448 64.552,14 64,14C62.084,14 57.916,14 56,14C55.448,14 55,14.448 55,15C55,18.014 55,26.986 55,30C55,30.552 55.448,31 56,31C57.916,31 62.084,31 64,31C64.552,31 65,30.552 65,30C65,26.986 65,18.014 65,15Z" style="fill:#c2c2c2;"/>
+        </svg>
+        
+        <svg height="40px" width="48px" viewBox="0 0 120 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+            <g id="Disk">
+                <path d="M90,17.071L90,85C90,86.326 89.473,87.598 88.536,88.536C87.598,89.473 86.326,90 85,90L15,90C13.674,90 12.402,89.473 11.464,88.536C10.527,87.598 10,86.326 10,85L10,15C10,13.674 10.527,12.402 11.464,11.464C12.402,10.527 13.674,10 15,10L82.929,10L90,17.071Z" style="fill:#f7840e;"/>
+                <path d="M80,43C80,41.343 78.657,40 77,40C66.758,40 33.242,40 23,40C21.343,40 20,41.343 20,43C20,51.182 20,73.818 20,82C20,83.657 21.343,85 23,85C33.242,85 66.758,85 77,85C78.657,85 80,83.657 80,82C80,73.818 80,51.182 80,43Z" style="fill:#fff;"/>
+                <path class="metal" d="M70,10L70,32.5C70,33.163 69.737,33.799 69.268,34.268C68.799,34.737 68.163,35 67.5,35C60.318,35 39.682,35 32.5,35C31.837,35 31.201,34.737 30.732,34.268C30.263,33.799 30,33.163 30,32.5L30,10L70,10ZM65,15C65,14.448 64.552,14 64,14C62.084,14 57.916,14 56,14C55.448,14 55,14.448 55,15C55,18.014 55,26.986 55,30C55,30.552 55.448,31 56,31C57.916,31 62.084,31 64,31C64.552,31 65,30.552 65,30C65,26.986 65,18.014 65,15Z" style="fill:#c2c2c2;"/>
+            </g>
+            <g id="Writing">
+                <path id="Bottom-Line" serif:id="Bottom Line" d="M30,72.5L70,72.5" style="fill:none;stroke:#313131;stroke-width:1px;"/>
+                <path d="M30,52.5L70,52.5" style="fill:none;stroke:#313131;stroke-width:1px;"/>
+                <path d="M30,62.5L70,62.5" style="fill:none;stroke:#313131;stroke-width:1px;"/>
+            </g>
+            <g id="Pencil">
+                <path d="M70.262,72.738L75.919,60.01L80.161,62.839L82.99,67.081L70.262,72.738Z" style="fill:#e2c873;"/>
+                <path d="M70.262,72.738L71.676,69.556L73.444,71.324L70.262,72.738Z" style="fill:#444;"/>
+                <path d="M75.919,60.01L82.99,67.081L111.274,38.797L104.203,31.726L75.919,60.01Z" style="fill:#fff800;"/>
+            </g>
+        </svg>
+
         <on-off-switch></on-off-switch>
         {{ this.bridge.currentArea + " " + this.bridge.currentScene + " " + this.bridge.entertainmentAreas}}
     </div>
