@@ -24,7 +24,7 @@
                     (change)="this.changeArea()">
                 <option *ngFor="let area of this.bridge.entertainmentAreas"
                         [value]="area.id">
-                    {{ area.name + " " + area.id }}
+                    {{ area.name | uppercase }}
                 </option>
             </select>
 
@@ -32,7 +32,7 @@
                     (change)="this.scenes.updateCurrentScene()">
                 <option *ngFor="let scene of this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea)"
                         [value]="scene">
-                    {{ scene }}
+                    {{ scene | uppercase }}
                 </option>
             </select>
         </div>
