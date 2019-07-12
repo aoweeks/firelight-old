@@ -39,8 +39,23 @@
         }
     }
 
-    .metal{
-        transition-duration: 0.1s;
+    svg{
+        .metal{
+            transition-duration: 0.1s;
+        }
+
+        #Pencil{
+            transition-duration: 0.3s;
+            transform: translate(-40px);
+        }
+
+        #bottom-line{
+            transition-duration: 0.3s;
+            stroke-dasharray: 40;
+            stroke-dashoffset: 40;
+        }
+
+
     }
 
     svg:hover{
@@ -51,6 +66,18 @@
             transform: translateX(-10px);
 
             transition-duration: 0.5s;
+        }
+
+        #Pencil{
+            transform: translate(0px);
+
+            transition-duration: 0.8s;
+        }
+
+        #bottom-line{
+            stroke-dashoffset: 0;
+
+            transition-duration: 0.8s;
         }
     }
 }
