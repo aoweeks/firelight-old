@@ -3,7 +3,10 @@
     class="light-box">
 
     <light-type [light]='this.scenesService.currentScene[light?.key]'></light-type>
-    {{ light.value.name | uppercase }}
-    <input #lightSwitch type="checkbox" [(ngModel)]="this.scenesService.currentScene[light?.key].on">
+    <span>
+      {{ light.value.name | uppercase }}
+      <on-off-switch (toggle)="this.toggleOn($event, light)"></on-off-switch>
+    </span>
+    <!-- <input #lightSwitch type="checkbox" [(ngModel)]="this.scenesService.currentScene[light?.key].on"> -->
   </div>
 </div>

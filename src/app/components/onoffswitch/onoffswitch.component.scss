@@ -2,11 +2,12 @@ $switch-neutral: #c5c5c5;
 $switch-light: #eeeeee;
 $switch-dark: #999999;
 
-
 svg{
-    height: 50px;
+    height: 20px;
     width: auto;
     
+    transform: translateY(5px);
+
     .switch-on{
         #On-Face{
             fill: $switch-neutral;

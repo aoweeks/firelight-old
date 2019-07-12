@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'on-off-switch',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnoffswitchComponent implements OnInit {
 
-  private on: Boolean = true;
+  @Output() toggle: EventEmitter<boolean> = new EventEmitter();
+  
+  private on: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
@@ -15,5 +18,6 @@ export class OnoffswitchComponent implements OnInit {
 
   clicked() {
     this.on = !this.on;
+    this.toggle.emit(this.on);
   }
 }

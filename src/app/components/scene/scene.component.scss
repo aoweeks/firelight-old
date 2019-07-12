@@ -13,5 +13,16 @@
         display: grid;
         justify-items: center;
         align-items: flex-end;
+
+        span{
+            height: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+
+            on-off-switch{
+                display: inline;
+                margin-left: 10px;
+            }
+        }
     }
 }

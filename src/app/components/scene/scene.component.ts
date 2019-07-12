@@ -48,4 +48,8 @@ export class SceneComponent implements OnInit {
   // getLight(lightID: number) {
   //     return this.scenesService.currentScene[lightID];
   // }
+
+  toggleOn(state: boolean, light: any) {
+    this.scenesService.currentScene[light.key].on = state;
+  }
 }
