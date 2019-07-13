@@ -23,6 +23,7 @@ import { BridgeWindowComponent } from './components/bridge-window/bridge-window.
 import { SceneComponent } from './components/scene/scene.component';
 import { LighttypeComponent } from './components/lighttype/lighttype.component';
 import { OnoffswitchComponent } from './components/onoffswitch/onoffswitch.component';
+import { FlSelectComponent } from './components/fl-select/fl-select.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -38,7 +39,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     BridgeWindowComponent,
     SceneComponent,
     LighttypeComponent,
-    OnoffswitchComponent
+    OnoffswitchComponent,
+    FlSelectComponent
   ],
   imports: [
     BrowserModule,
