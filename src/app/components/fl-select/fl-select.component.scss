@@ -1,0 +1,44 @@
+.select-base, .select-option{
+
+    display: inline-block;
+
+    height: 25px;
+    width: 150px;
+    padding-left: 10px;
+    margin-right: 10px;
+
+    cursor: pointer;
+
+    background-color: #18181d;
+    
+    color: #d0d0d8;
+    font-family: 'Lato';
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 25px;
+    
+    span{
+        display: inline-block;
+        padding-top: 1px;       
+    }
+
+    .hamburger{
+        float: right;
+        padding-top: 2.5px;
+        padding-right: 2.5px;
+    }
+
+}
+
+.select-base:hover{
+
+    .hamburger-line{
+        stroke: white;
+    }
+}
+
+.select-option{
+    font-weight: 400;
+
+    position: absolute;
+}

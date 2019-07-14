@@ -12,14 +12,9 @@ import { Scene } from '../../models/scene.model';
 })
 export class SceneComponent implements OnInit {
 
-  @Input()
-  bridgeIP;
-
-  @Input()
-  areaID;
-
-  @Input()
-  sceneName;
+  @Input() bridgeIP: string;
+  @Input() areaID: number;
+  @Input() sceneName: string;
 
   private areaInfo;
   private scene: Scene;
