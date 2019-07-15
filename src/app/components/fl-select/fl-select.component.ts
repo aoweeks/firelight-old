@@ -9,6 +9,7 @@ export class FlSelectComponent implements OnInit {
 
   @Input() text: string;
   @Input() itemList: [];
+  @Input() currentItem: string;
   @Output() selection: EventEmitter<string> = new EventEmitter();
 
   private activated: boolean = false;
@@ -30,7 +31,7 @@ export class FlSelectComponent implements OnInit {
     this.activated = false;
   }
 
-  log(base){
-    console.log(base);
+  selectOption(item) {
+    this.selection.emit( item.toString() );
   }
 }

@@ -75,7 +75,7 @@ export class BridgeService {
 
 
   public getAreaInfo(desiredAreaID) {
-    return this.entertainmentAreas.find((area) =>
+    return this.entertainmentAreas.find( (area) =>
       area.id === desiredAreaID.toString()
     );
   }

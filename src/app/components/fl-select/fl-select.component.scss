@@ -33,7 +33,7 @@
 .select-base:hover{
 
     .hamburger-line{
-        stroke: white;
+        stroke: white!important;
     }
 }
 
@@ -41,4 +41,8 @@
     font-weight: 400;
 
     position: absolute;
+}
+
+.select-option:hover{
+    color: white;
 }

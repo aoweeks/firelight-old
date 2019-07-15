@@ -38,11 +38,13 @@
 
             <fl-select  (selection)="selectArea($event)"
                         [text]="'Select area'"
-                        [itemList]="this.bridge.entertainmentAreas"></fl-select>
+                        [itemList]="this.bridge.entertainmentAreas"
+                        [currentItem]="this.bridge.getAreaInfo(this.bridge.currentArea).name"></fl-select>
 
             <fl-select  (selection)="selectScene($event)"
                         [text]="'Select scene'"
-                        [itemList]="this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea)"></fl-select>
+                        [itemList]="this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea)"
+                        [currentItem]="this.bridge.currentSceneName"></fl-select>
         </div>
         <svg width="25px" height="25px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <path d="M90,17.071L90,85C90,86.326 89.473,87.598 88.536,88.536C87.598,89.473 86.326,90 85,90L15,90C13.674,90 12.402,89.473 11.464,88.536C10.527,87.598 10,86.326 10,85L10,15C10,13.674 10.527,12.402 11.464,11.464C12.402,10.527 13.674,10 15,10L82.929,10L90,17.071Z" style="fill:#F16A24;"/>

@@ -1,6 +1,6 @@
 <div class="select-base" (click)="toggleActivation()" #base>
 
-    <span>{{ this.text | uppercase }}</span>
+    <span>{{ this.currentItem && !this.activated ? this.currentItem : this.text | uppercase }}</span>
     
     <svg class="hamburger" width="20px" height="20px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
       <line class="hamburger-line" style="stroke:#F16A24;stroke-width:8px" x1="10" y1="30" x2="90" y2="30" />
@@ -13,7 +13,8 @@
     <div  class="select-option"
           *ngIf="this.activated"
           [style.top]="(base.getBoundingClientRect().top - ((i + 1) * 25)) + 'px'"
-          [style.left]="base.getBoundingClientRect().left + 'px'">
+          [style.left]="base.getBoundingClientRect().left + 'px'"
+          (click)="selectOption(item)">
       <span>{{ item  }}</span>
     </div>
 </ng-container>
