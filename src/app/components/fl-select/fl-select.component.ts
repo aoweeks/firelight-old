@@ -33,5 +33,6 @@ export class FlSelectComponent implements OnInit {
 
   selectOption(item) {
     this.selection.emit( item.toString() );
+    this.deactivate();
   }
 }

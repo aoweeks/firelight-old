@@ -36,12 +36,12 @@
                 </option>
             </select>
 
-            <fl-select  (selection)="selectArea($event)"
+            <fl-select  (selection)="this.bridge.currentArea = ''"
                         [text]="'Select area'"
                         [itemList]="this.bridge.entertainmentAreas"
                         [currentItem]="this.bridge.getAreaInfo(this.bridge.currentArea).name"></fl-select>
 
-            <fl-select  (selection)="selectScene($event)"
+            <fl-select  (selection)="this.bridge.currentSceneName = $event"
                         [text]="'Select scene'"
                         [itemList]="this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea)"
                         [currentItem]="this.bridge.currentSceneName"></fl-select>
