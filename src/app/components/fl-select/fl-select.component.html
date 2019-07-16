@@ -1,23 +1,25 @@
 <div class="select-base" (click)="toggleActivation()" (clickOutside)="deactivate()" #base>
-
-    <span>{{ this.currentItem && !this.activated ? this.currentItem : this.text | uppercase }}</span>
-    
-    <svg class="hamburger" width="20px" height="20px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-      <line class="hamburger-line" style="stroke:#F16A24;stroke-width:8px" x1="10" y1="30" x2="90" y2="30" />
-      <line class="hamburger-line" style="stroke:#F16A24;stroke-width:8px" x1="10" y1="50" x2="90" y2="50" />
-      <line class="hamburger-line" style="stroke:#F16A24;stroke-width:8px" x1="10" y1="70" x2="90" y2="70" />
-    </svg>
+  <span>
+    {{ this.currentItem && !this.activated ? this.currentItem : this.text | uppercase }}
+  </span>
+  
+  <svg class="hamburger" width="20px" height="20px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <line class="hamburger-line" style="stroke:#F16A24;stroke-width:8px" x1="10" y1="30" x2="90" y2="30" />
+    <line class="hamburger-line" style="stroke:#F16A24;stroke-width:8px" x1="10" y1="50" x2="90" y2="50" />
+    <line class="hamburger-line" style="stroke:#F16A24;stroke-width:8px" x1="10" y1="70" x2="90" y2="70" />
+  </svg>
 </div>
 
-<div [@itemState]="this.activated" >
-<ng-container *ngFor="let item of this.itemList; let i = index">
+<div  [@itemState]="this.activated"
+      class="option-container">
+  <ng-container *ngFor="let item of this.itemList; let i = index">
     <div  class="select-option"
           *ngIf="this.activated"
           [style.top]="(base.getBoundingClientRect().top - ((i + 1) * 25)) + 'px'"
           [style.left]="base.getBoundingClientRect().left + 'px'"
           (click)="selectOption(item)"
-           >
+          >
       <span>{{ this.getItem(item) }}</span>
     </div>
-</ng-container>
+  </ng-container>
 </div>

@@ -37,12 +37,17 @@
     }
 }
 
-.select-option{
-    font-weight: 400;
+.option-container{
 
-    position: absolute;
-}
+    display: inline-block;
 
-.select-option:hover{
-    color: white;
+    .select-option{
+        font-weight: 400;
+
+        position: absolute;
+    }
+
+    .select-option:hover{
+        color: white;
+    }
 }

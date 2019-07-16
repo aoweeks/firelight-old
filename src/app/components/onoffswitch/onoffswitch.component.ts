@@ -17,6 +17,15 @@ export class OnoffswitchComponent implements OnInit {
   }
 
   clicked() {
+    this.playAudio(!this.on);
     this.toggle.emit(!this.on);
+  }
+
+  playAudio(on: boolean){
+    let audio = new Audio();
+    audio.src = on ?  "../../assets/audio/switch-on.mp3" :
+                      "../../assets/audio/switch-off.mp3";
+    audio.load();
+    audio.play();
   }
 }

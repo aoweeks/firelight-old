@@ -11,15 +11,13 @@ import { trigger, state, style, animate, transition, stagger, query } from '@ang
           // style({transform: 'translateX(-100%)', opacity: 0}),
           // animate('500ms ease-out')
         // ]),
-      transition('* => true', [
+      transition('* => *', [
         query(':enter', [
           stagger(50, [
             style({transform: 'translateX(-100%)', opacity: 0}),
             animate('300ms ease-in', style({transform: 'translateX(0%)', opacity: 1}))
           ])
-        ])
-      ]),
-      transition('true => false', [
+        ], {optional: true} ),
         query(':leave', [
           stagger(-50, [
             animate('300ms ease-out', style({ transform: 'translateX(100%)', opacity: 0}))
