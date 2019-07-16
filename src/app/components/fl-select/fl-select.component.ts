@@ -30,6 +30,10 @@ export class FlSelectComponent implements OnInit {
   deactivate() {
     this.activated = false;
   }
+  
+  getItem(item: any) {
+    return typeof(item) === 'string' ? item : item.name;
+  }
 
   selectOption(item) {
     this.selection.emit( item.toString() );
