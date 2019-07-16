@@ -1,9 +1,33 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { trigger, state, style, animate, transition, stagger, query } from '@angular/animations';
 
 @Component({
   selector: 'fl-select',
   templateUrl: './fl-select.component.html',
-  styleUrls: ['./fl-select.component.scss']
+  styleUrls: ['./fl-select.component.scss'],
+  animations: [
+    trigger('itemState', [
+        // transition('void => *', [
+          // style({transform: 'translateX(-100%)', opacity: 0}),
+          // animate('500ms ease-out')
+        // ]),
+      transition('* => true', [
+        query(':enter', [
+          stagger(50, [
+            style({transform: 'translateX(-100%)', opacity: 0}),
+            animate('300ms ease-in', style({transform: 'translateX(0%)', opacity: 1}))
+          ])
+        ])
+      ]),
+      transition('true => false', [
+        query(':leave', [
+          stagger(-50, [
+            animate('300ms ease-out', style({ transform: 'translateX(100%)', opacity: 0}))
+          ])
+        ], {optional: true} )
+      ])
+    ])
+  ]
 })
 export class FlSelectComponent implements OnInit {
 
@@ -30,7 +54,7 @@ export class FlSelectComponent implements OnInit {
   deactivate() {
     this.activated = false;
   }
-  
+
   getItem(item: any) {
     return typeof(item) === 'string' ? item : item.name;
   }
