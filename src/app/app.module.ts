@@ -25,6 +25,7 @@ import { SceneComponent } from './components/scene/scene.component';
 import { LighttypeComponent } from './components/lighttype/lighttype.component';
 import { OnoffswitchComponent } from './components/onoffswitch/onoffswitch.component';
 import { FlSelectComponent } from './components/fl-select/fl-select.component';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,7 +42,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SceneComponent,
     LighttypeComponent,
     OnoffswitchComponent,
-    FlSelectComponent
+    FlSelectComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,
