@@ -11,6 +11,8 @@
 </div>
 
 <div  [@itemState]="this.activated"
+      (@itemState.start)="startAnimation()"
+      (@itemState.done)="finishAnimation()"
       class="option-container">
   <ng-container *ngFor="let item of this.itemList; let i = index">
     <div  class="select-option"
@@ -18,6 +20,7 @@
           [style.top]="(base.getBoundingClientRect().top - ((i + 1) * 25)) + 'px'"
           [style.left]="base.getBoundingClientRect().left + 'px'"
           (click)="selectOption(item)"
+          [ngClass]=" {'activated-option' : this.animating} "
           >
       <span>{{ this.getItem(item) }}</span>
     </div>

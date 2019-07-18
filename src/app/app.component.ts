@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
+
 import { ElectronService } from './providers/electron.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from '../environments/environment';
@@ -9,7 +12,18 @@ import { ScenesService } from './providers/scenes.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  // animations: [
+  //   trigger('itemState', [
+  //     transition('false => true', [
+  //       style({transform: 'translateX(-100%)', opacity: 0}),
+  //       animate('500ms ease-out')
+  //     ]),
+  //     transition('true => false', [
+  //       style({transform: 'translateX(-100%)', opacity: 0}),
+  //       animate('500ms ease-out')
+  //     ])
+  // ]
 })
 export class AppComponent {
   constructor(public electronService: ElectronService,
@@ -38,10 +52,14 @@ export class AppComponent {
   }
 
 
-  changeArea() {
-    this.scenes.updateCurrentScene(this.bridge.host, this.bridge.currentArea, this.bridge.currentSceneName);
+  changeArea(event) {
+    this.bridge.currentArea = event.id;
     const sceneList = this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea);
-    console.log(sceneList);
-    // this.bridge.currentSceneName = sceneList[0];
+    this.bridge.currentSceneName = sceneList[0];
+    this.scenes.updateCurrentScene(this.bridge.host, this.bridge.currentArea, this.bridge.currentSceneName);
+  }
+
+  saveClick(){
+
   }
 }

@@ -11,6 +11,12 @@ import { trigger, state, style, animate, transition, stagger, query } from '@ang
           // style({transform: 'translateX(-100%)', opacity: 0}),
           // animate('500ms ease-out')
         // ]),
+      // state('false', 
+      //   style({transform: 'translateX(-100%)', opacity: 0})
+      // ),
+      // query(':enter', [
+      //     style({transform: 'translateX(-100%)', opacity: 0}),
+      // ], {optional: true} ),
       transition('* => *', [
         query(':enter', [
           stagger(50, [
@@ -35,6 +41,7 @@ export class FlSelectComponent implements OnInit {
   @Output() selection: EventEmitter<string> = new EventEmitter();
 
   private activated: boolean = false;
+  private animating: boolean = false;
 
   constructor() { }
 
@@ -58,7 +65,16 @@ export class FlSelectComponent implements OnInit {
   }
 
   selectOption(item) {
-    this.selection.emit( item.toString() );
+    this.selection.emit(item);
     this.deactivate();
+  }
+
+
+  startAnimation(){
+    this.animating = true;
+  }
+
+  finishAnimation(){
+    this.animating = false;
   }
 }

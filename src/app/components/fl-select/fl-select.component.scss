@@ -45,9 +45,15 @@
         font-weight: 400;
 
         position: absolute;
+
     }
 
     .select-option:hover{
         color: white;
+    }
+
+    .activated-option{
+        transform: translateX(-100%);
+        opacity: 0;
     }
 }

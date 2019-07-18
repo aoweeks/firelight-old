@@ -5,4 +5,9 @@ html, body {
 
   height: 100%;
   background-color: #2a2c31;
+
+  overflow: hidden;
+  user-select: none;
+  
+  font-family: 'Lato';
 }
