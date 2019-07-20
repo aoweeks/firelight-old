@@ -61,5 +61,9 @@ export class AppComponent {
 
   saveClick(){
 
+    // TEMP, replace with if current scene info != saved scene info
+    if (true) {
+      //save stuff
+    }
   }
 }

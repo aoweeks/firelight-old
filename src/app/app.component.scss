@@ -63,6 +63,10 @@
     }
 
     svg{
+
+        .plastic{
+            fill: #F16A24;
+        }
         .metal{
             transition-duration: 0.1s;
         }
@@ -87,20 +91,33 @@
 
         .metal{
             transform: translateX(-10px);
-
             transition-duration: 0.5s;
         }
 
         #Pencil{
             transform: translate(0px);
-
             transition-duration: 0.8s;
         }
 
         #bottom-line{
             stroke-dashoffset: 0;
-
             transition-duration: 0.8s;
+        }
+    }
+
+    // Reverse this so ngClass ADDS active class instead of inactive
+    .save-inactive{
+
+        :hover{
+            cursor: default;
+        }
+
+        .plastic{
+            fill: #555555!important;
+        }
+
+        .metal{
+            transform: translateX(0);
         }
     }
 }
