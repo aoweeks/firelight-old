@@ -47,7 +47,8 @@
                         [currentItem]="this.bridge.currentSceneName"></fl-select>
         </div>
                     <!-- TEMP -->
-        <svg    [ngClass]=" { 'save-inactive' : true } "
+        <svg    id="save"
+                [ngClass]=" { 'save-active' : true } "
                 (click)="this.saveClick()"
                 width="25px" height="25px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <path class="plastic" d="M90,17.071L90,85C90,86.326 89.473,87.598 88.536,88.536C87.598,89.473 86.326,90 85,90L15,90C13.674,90 12.402,89.473 11.464,88.536C10.527,87.598 10,86.326 10,85L10,15C10,13.674 10.527,12.402 11.464,11.464C12.402,10.527 13.674,10 15,10L82.929,10L90,17.071Z" />
@@ -55,7 +56,8 @@
             <path class="metal" d="M70,10L70,32.5C70,33.163 69.737,33.799 69.268,34.268C68.799,34.737 68.163,35 67.5,35C60.318,35 39.682,35 32.5,35C31.837,35 31.201,34.737 30.732,34.268C30.263,33.799 30,33.163 30,32.5L30,10L70,10ZM65,15C65,14.448 64.552,14 64,14C62.084,14 57.916,14 56,14C55.448,14 55,14.448 55,15C55,18.014 55,26.986 55,30C55,30.552 55.448,31 56,31C57.916,31 62.084,31 64,31C64.552,31 65,30.552 65,30C65,26.986 65,18.014 65,15Z" style="fill:#c2c2c2;"/>
         </svg>
         
-        <svg    (click)="this.saveAsClick()"
+        <svg    id="save-as"
+                (click)="this.saveAsClick()"
                 height="25px" width="30px" viewBox="0 0 120 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
             <g id="Disk">
                 <path class="plastic" d="M90,17.071L90,85C90,86.326 89.473,87.598 88.536,88.536C87.598,89.473 86.326,90 85,90L15,90C13.674,90 12.402,89.473 11.464,88.536C10.527,87.598 10,86.326 10,85L10,15C10,13.674 10.527,12.402 11.464,11.464C12.402,10.527 13.674,10 15,10L82.929,10L90,17.071Z" />

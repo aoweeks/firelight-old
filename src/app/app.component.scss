@@ -62,13 +62,15 @@
         }
     }
 
-    svg{
+    #save{
+        .plastic{
+            fill: #555555;
+        }
+    }
 
+    #save-as{
         .plastic{
             fill: #F16A24;
-        }
-        .metal{
-            transition-duration: 0.1s;
         }
 
         #Pencil{
@@ -81,13 +83,15 @@
             stroke-dasharray: 40;
             stroke-dashoffset: 40;
         }
-
-
     }
 
-    svg:hover{
+    svg{
+        .metal{
+            transition-duration: 0.1s;
+        }
+    }
 
-        cursor: pointer;
+    #save-as:hover{
 
         .metal{
             transform: translateX(-10px);
@@ -105,19 +109,19 @@
         }
     }
 
-    // Reverse this so ngClass ADDS active class instead of inactive
-    .save-inactive{
-
-        :hover{
-            cursor: default;
-        }
+    .save-active{
 
         .plastic{
-            fill: #555555!important;
+            fill: #F16A24 !important;
         }
 
+    }
+
+    .save-active:hover, #save-as:hover{
+        cursor: pointer;
+    
         .metal{
-            transform: translateX(0);
+            transform: translateX(-10px);
         }
     }
 }
