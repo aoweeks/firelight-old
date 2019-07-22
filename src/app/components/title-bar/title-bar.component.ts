@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'title-bar',
@@ -7,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TitleBarComponent implements OnInit {
 
+  @Input() windowName: string = 'FireLight';
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  closeAllWindows(){
-    console.log('Close all windows');
+  minimizeWindow(){
+    console.log('Minimize window');
+  }
+
+  closeWindow(){
+    console.log('Close window');
   }
 
 }
