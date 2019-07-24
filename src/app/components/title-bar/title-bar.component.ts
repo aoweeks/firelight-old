@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ElectronService } from '../../providers/electron.service';
 
 @Component({
   selector: 'title-bar',
@@ -9,17 +10,17 @@ export class TitleBarComponent implements OnInit {
 
   @Input() windowName: string = 'FireLight';
 
-  constructor() { }
+  constructor(private electron: ElectronService ) { }
 
   ngOnInit() {
   }
 
   minimizeWindow(){
-    console.log('Minimize window');
+    this.electron.window.minimize();
   }
 
   closeWindow(){
-    console.log('Close window');
+    this.electron.window.close();
   }
 
 }
