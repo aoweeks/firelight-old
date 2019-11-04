@@ -18,7 +18,7 @@ import { ElectronService } from './providers/electron.service';
 import { WebviewDirective } from './directives/webview.directive';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeScreenComponent } from './components/home-screen/home-screen.component';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 import { BridgeWindowComponent } from './components/bridge-window/bridge-window.component';
 import { SceneComponent } from './components/scene/scene.component';
@@ -36,7 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeScreenComponent,
     WebviewDirective,
     TitleBarComponent,
     BridgeWindowComponent,
