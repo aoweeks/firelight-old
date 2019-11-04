@@ -12,7 +12,7 @@ export class ElectronService {
   ipcRenderer: typeof ipcRenderer;
   webFrame: typeof webFrame;
   remote: typeof remote;
-  window: typeof BrowserWindow;
+  window;
   childProcess: typeof childProcess;
   fs: typeof fs;
 
