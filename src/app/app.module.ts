@@ -27,6 +27,7 @@ import { OnoffswitchComponent } from './components/onoffswitch/onoffswitch.compo
 import { FlSelectComponent } from './components/fl-select/fl-select.component';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { ColourPickerComponent } from './components/colour-picker/colour-picker.component';
+import { BridgeScreenComponent } from './components/bridge-screen/bridge-screen.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -45,7 +46,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     OnoffswitchComponent,
     FlSelectComponent,
     ClickOutsideDirective,
-    ColourPickerComponent
+    ColourPickerComponent,
+    BridgeScreenComponent
   ],
   imports: [
     BrowserModule,
