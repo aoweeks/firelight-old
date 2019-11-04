@@ -9,7 +9,7 @@ const routes: Routes = [
         component: HomeScreenComponent
     },
     {
-        path: 'router',
+        path: 'bridge',
         component: BridgeScreenComponent
     }
 
