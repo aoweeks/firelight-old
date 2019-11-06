@@ -1,1 +1,83 @@
-<a routerLink="/bridge">HOME</a>
+<scene  [bridgeIP]="this.bridge.host"
+    [areaID]="this.bridge.currentArea"
+    [sceneName]="this.bridge.currentScene">
+</scene>
+
+<div class="options-row">
+
+    
+    <div class="bridge">
+        <a routerLink="/bridge">
+            <svg version="1.1" id="bridge-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve"
+                (click)="openBridgeWindow()">
+                <path class="bridge-body" d="M35,45H15C9.5,45,5,40.5,5,35V15C5,9.5,9.5,5,15,5h20c5.5,0,10,4.5,10,10v20C45,40.5,40.5,45,35,45z"/>
+                <g [ngClass]="{'bridge-online': this.bridge.isOnline}">
+                    <circle class="bridge-ring" cx="25" cy="25" r="7.5"/>
+                    <circle class="bridge-light" cx="25" cy="11" r="1.9"/>
+                    <circle class="bridge-light" cx="35" cy="11" r="1.9"/>
+                    <circle class="bridge-light" cx="15" cy="11" r="1.9"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+    <div class="areas">
+        <!-- <select [(ngModel)]="this.bridge.currentArea"
+                (change)="this.changeArea()">
+            <option *ngFor="let area of this.bridge.entertainmentAreas"
+                    [value]="area.id">
+                {{ area.name | uppercase }}
+            </option>
+        </select>
+
+        <select [(ngModel)]="this.bridge.currentScene"
+                (change)="this.scenes.updateCurrentScene()">
+            <option *ngFor="let scene of this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea)"
+                    [value]="scene">
+                {{ scene | uppercase }}
+            </option>
+        </select> -->
+
+        <fl-select  (selection)="this.changeArea($event)"
+                    [text]="'Select area'"
+                    [itemList]="this.bridge.entertainmentAreas"
+                    [currentItem]="this.bridge.getAreaInfo(this.bridge.currentArea).name"></fl-select>
+
+        <fl-select  (selection)="this.bridge.currentSceneName = $event"
+                    [text]="'Select scene'"
+                    [itemList]="this.scenes.getScenesForArea(this.bridge.host, this.bridge.currentArea)"
+                    [currentItem]="this.bridge.currentSceneName"></fl-select>
+    </div>
+                <!-- TEMP -->
+    <svg    id="save"
+            [ngClass]=" { 'save-active' : true } "
+            (click)="this.saveClick()"
+            width="25px" height="25px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+        <path class="plastic" d="M90,17.071L90,85C90,86.326 89.473,87.598 88.536,88.536C87.598,89.473 86.326,90 85,90L15,90C13.674,90 12.402,89.473 11.464,88.536C10.527,87.598 10,86.326 10,85L10,15C10,13.674 10.527,12.402 11.464,11.464C12.402,10.527 13.674,10 15,10L82.929,10L90,17.071Z" />
+        <path d="M80,43C80,41.343 78.657,40 77,40C66.758,40 33.242,40 23,40C21.343,40 20,41.343 20,43C20,51.182 20,73.818 20,82C20,83.657 21.343,85 23,85C33.242,85 66.758,85 77,85C78.657,85 80,83.657 80,82C80,73.818 80,51.182 80,43Z" style="fill:#fff;"/>
+        <path class="metal" d="M70,10L70,32.5C70,33.163 69.737,33.799 69.268,34.268C68.799,34.737 68.163,35 67.5,35C60.318,35 39.682,35 32.5,35C31.837,35 31.201,34.737 30.732,34.268C30.263,33.799 30,33.163 30,32.5L30,10L70,10ZM65,15C65,14.448 64.552,14 64,14C62.084,14 57.916,14 56,14C55.448,14 55,14.448 55,15C55,18.014 55,26.986 55,30C55,30.552 55.448,31 56,31C57.916,31 62.084,31 64,31C64.552,31 65,30.552 65,30C65,26.986 65,18.014 65,15Z" style="fill:#c2c2c2;"/>
+    </svg>
+    
+    <svg    id="save-as"
+            (click)="this.saveAsClick()"
+            height="25px" width="30px" viewBox="0 0 120 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+        <g id="Disk">
+            <path class="plastic" d="M90,17.071L90,85C90,86.326 89.473,87.598 88.536,88.536C87.598,89.473 86.326,90 85,90L15,90C13.674,90 12.402,89.473 11.464,88.536C10.527,87.598 10,86.326 10,85L10,15C10,13.674 10.527,12.402 11.464,11.464C12.402,10.527 13.674,10 15,10L82.929,10L90,17.071Z" />
+            <path d="M80,43C80,41.343 78.657,40 77,40C66.758,40 33.242,40 23,40C21.343,40 20,41.343 20,43C20,51.182 20,73.818 20,82C20,83.657 21.343,85 23,85C33.242,85 66.758,85 77,85C78.657,85 80,83.657 80,82C80,73.818 80,51.182 80,43Z" style="fill:#fff;"/>
+            <path class="metal" d="M70,10L70,32.5C70,33.163 69.737,33.799 69.268,34.268C68.799,34.737 68.163,35 67.5,35C60.318,35 39.682,35 32.5,35C31.837,35 31.201,34.737 30.732,34.268C30.263,33.799 30,33.163 30,32.5L30,10L70,10ZM65,15C65,14.448 64.552,14 64,14C62.084,14 57.916,14 56,14C55.448,14 55,14.448 55,15C55,18.014 55,26.986 55,30C55,30.552 55.448,31 56,31C57.916,31 62.084,31 64,31C64.552,31 65,30.552 65,30C65,26.986 65,18.014 65,15Z" style="fill:#c2c2c2;"/>
+        </g>
+        <g id="Writing">
+            <line id="bottom-line" style="stroke:#313131;stroke-width:1px" x1="30" y1="72.5" x2="70" y2="72.5" />
+            <!-- <path id="Bottom-Line" serif:id="Bottom Line" d="M30,72.5L70,72.5" style="fill:none;stroke:#313131;stroke-width:1px;"/> -->
+            <path d="M30,52.5L70,52.5" style="fill:none;stroke:#313131;stroke-width:1px;"/>
+            <path d="M30,62.5L70,62.5" style="fill:none;stroke:#313131;stroke-width:1px;"/>
+        </g>
+        <g id="Pencil">
+            <path d="M70.262,72.738L75.919,60.01L80.161,62.839L82.99,67.081L70.262,72.738Z" style="fill:#e2c873;"/>
+            <path d="M70.262,72.738L71.676,69.556L73.444,71.324L70.262,72.738Z" style="fill:#444;"/>
+            <path d="M75.919,60.01L82.99,67.081L111.274,38.797L104.203,31.726L75.919,60.01Z" style="fill:#fff800;"/>
+        </g>
+    </svg>
+
+    <on-off-switch></on-off-switch>
+</div>

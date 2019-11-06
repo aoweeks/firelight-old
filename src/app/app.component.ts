@@ -47,10 +47,6 @@ export class AppComponent {
     );
   }
 
-  openBridgeWindow() {
-    console.log('Clicked!');
-  }
-
 
   changeArea(event) {
     this.bridge.currentArea = event.id;
