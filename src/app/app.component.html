@@ -7,17 +7,19 @@
     <router-outlet></router-outlet>
     <div class="options-row">
         <div class="bridge">
-            <svg version="1.1" id="bridge-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve"
-                (click)="openBridgeWindow()">
-                <path class="bridge-body" d="M35,45H15C9.5,45,5,40.5,5,35V15C5,9.5,9.5,5,15,5h20c5.5,0,10,4.5,10,10v20C45,40.5,40.5,45,35,45z"/>
-                <g [ngClass]="{'bridge-online': this.bridge.isOnline}">
-                    <circle class="bridge-ring" cx="25" cy="25" r="7.5"/>
-                    <circle class="bridge-light" cx="25" cy="11" r="1.9"/>
-                    <circle class="bridge-light" cx="35" cy="11" r="1.9"/>
-                    <circle class="bridge-light" cx="15" cy="11" r="1.9"/>
-                </g>
-            </svg>
+            <a routerLink="/bridge">
+                <svg version="1.1" id="bridge-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve"
+                    (click)="openBridgeWindow()">
+                    <path class="bridge-body" d="M35,45H15C9.5,45,5,40.5,5,35V15C5,9.5,9.5,5,15,5h20c5.5,0,10,4.5,10,10v20C45,40.5,40.5,45,35,45z"/>
+                    <g [ngClass]="{'bridge-online': this.bridge.isOnline}">
+                        <circle class="bridge-ring" cx="25" cy="25" r="7.5"/>
+                        <circle class="bridge-light" cx="25" cy="11" r="1.9"/>
+                        <circle class="bridge-light" cx="35" cy="11" r="1.9"/>
+                        <circle class="bridge-light" cx="15" cy="11" r="1.9"/>
+                    </g>
+                </svg>
+            </a>
         </div>
         <div class="areas">
             <!-- <select [(ngModel)]="this.bridge.currentArea"
