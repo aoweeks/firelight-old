@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container"
+    [@routeAnimations]="prepareRoute(outlet)">
     <title-bar></title-bar>
-    <router-outlet></router-outlet>
+    <router-outlet #outlet="outlet"></router-outlet>
 
 </div>
 

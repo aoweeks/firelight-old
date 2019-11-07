@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-
+import { slideInAnimation } from './router.animations';
 
 import { ElectronService } from './providers/electron.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -13,6 +14,10 @@ import { ScenesService } from './providers/scenes.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [
+    slideInAnimation
+    // animation triggers go here
+  ]
   // animations: [
   //   trigger('itemState', [
   //     transition('false => true', [
@@ -61,5 +66,9 @@ export class AppComponent {
     if (true) {
       //save stuff
     }
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 }
