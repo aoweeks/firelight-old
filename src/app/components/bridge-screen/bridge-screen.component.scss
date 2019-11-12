@@ -1,0 +1,31 @@
+#bridge-icon{
+    height: 250px;
+    width: 250px;
+
+    .bridge-body{
+        fill:#DDDDDD;
+    }
+    .bridge-ring{
+        fill:none;stroke:red;stroke-width:2;stroke-miterlimit:10;
+    }
+    .bridge-light{
+        fill:red;
+    }
+
+    .bridge-online{
+        .bridge-light{
+            fill:#3FA9F5;
+        }
+        .bridge-ring{
+            stroke:#3FA9F5
+        }
+    }
+
+    :hover{
+        cursor: pointer;
+        
+        .bridge-body{
+            fill: red !important;
+        }
+    }
+}
