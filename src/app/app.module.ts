@@ -29,6 +29,8 @@ import { FlSelectComponent } from './components/fl-select/fl-select.component';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { ColourPickerComponent } from './components/colour-picker/colour-picker.component';
 import { BridgeScreenComponent } from './components/bridge-screen/bridge-screen.component';
+import { InfoScreenComponent } from './components/info-screen/info-screen.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -48,7 +50,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     FlSelectComponent,
     ClickOutsideDirective,
     ColourPickerComponent,
-    BridgeScreenComponent
+    BridgeScreenComponent,
+    InfoScreenComponent,
+    BackButtonComponent
   ],
   imports: [
     BrowserModule,
