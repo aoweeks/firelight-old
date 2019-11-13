@@ -31,6 +31,7 @@ import { ColourPickerComponent } from './components/colour-picker/colour-picker.
 import { BridgeScreenComponent } from './components/bridge-screen/bridge-screen.component';
 import { InfoScreenComponent } from './components/info-screen/info-screen.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
+import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -52,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ColourPickerComponent,
     BridgeScreenComponent,
     InfoScreenComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    SettingsScreenComponent
   ],
   imports: [
     BrowserModule,
